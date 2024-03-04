@@ -3,6 +3,7 @@ package com.juaracoding;
 import com.juaracoding.pages.CartPage;
 import com.juaracoding.pages.LoginPage;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +18,10 @@ public class AddCartTest {
 
     public AddCartTest() {
         driver = Hooks.driver;
-        // exten report
+        // exte report
+    }
+    public void user_login() {
+        loginPage.Login("standard_user", "secret_sauce");
     }
 
     @When("User menambahkan produk ke keranjang")

@@ -1,6 +1,8 @@
 package com.juaracoding.pages;
 
 import com.juaracoding.drivers.DriverSingleton;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,35 +35,36 @@ public class LoginPage {
     @FindBy(xpath = "//a[@id='logout_sidebar_link']")
     private WebElement btnLogout;
 
-    public void login(String username, String password) {
+    public void Login(String username, String password) {
         this.username.sendKeys(username);
         this.password.sendKeys(password);
         btnLogin.click();
     }
 
-    public void inputUsername(String username) {
-        this.username.sendKeys(username);
-    }
+            public void inputUsername (String username){
+                this.username.sendKeys(username);
+            }
 
-    public void inputPassword(String password) {
-        this.password.sendKeys(password);
-    }
+            public void inputPassword (String password){
+                this.password.sendKeys(password);
+            }
 
-    public void clickBtnLogin() {
-        btnLogin.click();
-    }
+            public void clickBtnLogin () {
+                btnLogin.click();
+            }
 
-    public String getTxtAppLogo() {
-        return appLogo.getText();
-    }
+            public String getTxtAppLogo () {
+                return appLogo.getText();
+            }
 
-    public void logout() {
-        userDropdown.click();
-        btnLogout.click();
-    }
+            public void logout () {
+                userDropdown.click();
+                btnLogout.click();
+            }
 
-    public String getTxtInvalidCredentials() {
-        return txtInvalidCredentials.getText();
-    }
+            public String getTxtInvalidCredentials () {
+                return txtInvalidCredentials.getText();
+            }
 
-}
+        }
+

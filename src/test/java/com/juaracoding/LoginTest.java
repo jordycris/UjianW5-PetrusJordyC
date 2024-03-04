@@ -42,6 +42,7 @@ public class LoginTest {
         loginPage.clickBtnLogin();
     }
 
+
     @Given("User berada di halaman login")
     public void user_berada_di_halaman_login() {
         driver.get("https://www.saucedemo.com/");
@@ -60,6 +61,10 @@ public class LoginTest {
     @Then("User berhasil login dan diarahkan ke halaman utama atau dashboard setelah login")
     public void user_berhasil_login_dan_diarahkan_ke_halaman_utama_atau_dashboard_setelah_login() {
         Assert.assertEquals(loginPage.getTxtAppLogo(), "Swag Labs");
+    }
 
+    @Then("Sistem menampilkan pesan kesalahan Invalid credentials")
+    public void sistem_menampilkan_pesan_kesalahan_invalid_credentials() {
+        Assert.assertEquals(loginPage.getTxtInvalidCredentials(), "Invalid credentials");
     }
 }
